@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prototype</title>
+        <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script>
+        <script type="text/javascript">
+            function nif(dni){
+                var capa=$("respuesta");
+                numero = dni.substr(0,dni.length-1);
+                let = dni.substr(dni.length-1,1);
+                numero = numero % 23;
+                letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
+                letra = letra.substring(numero,numero+1);
+                if(letra!=let.toUpperCase())
+                    capa.innerHTML='Dni erroneo';
+                else
+                    capa.innerHTML='Dni correcto';
+            }
+            function muestracontenido(){
+                nif($F("dni"));
+                var capa=$("respuesta");
+                var tp=$$("p");
+                capa.innerHTML+="<br>Número de párrafos: "+tp.length;
+                tp=$$("#parrafos p")
+                capa.innerHTML+="<br>Número de párrafos de capa: "+tp.length;
+                var arrayopciones=$A($("lista"));
+                capa.innerHTML+="<br>Options: "+arrayopciones.length;
+            }
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h3>Formulario</h3>
+            DNI:
+            <input type="text" size="12" id="dni"/><br>
+            <input type="button" name="boton" value="Validar" id="boton" onclick="muestracontenido()"/>
+        </div>
+        <div id="respuesta"></div>
+        <div id="parrafos">
+            <p>Estamos probando las características de la librería prototype</p>
+            <p>En este caso los párrafos son para la función $$</p>
+            <select id="lista">
+                <option value="1">Primero</option>
+                <option value="2">Segundo</option>
+                <option value="3">Tercero</option>
+                <option value="4">Cuarto</option>
+            </select>
+        </div>
+    </body>
+</html>

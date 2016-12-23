@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ríos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+        <script type="text/javascript">
+            function comienza(pais){
+                new Ajax.Updater('contenido','banderas.php',
+                {method:'post',asynchronous:true,
+                parameters:'boton='+pais, onSuccess:verRespuesta});
+            }
+            function verRespuesta(obja){
+                $('contenido').innerHTML=obja.responseText;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+                <input type="image" src="spain.png" id="boton" name="España" onclick="comienza('España')"/>
+                <input type="image" src="germany.png" id="boton" name="Alemania" onclick="comienza('Alemania')"/>
+                <input type="image" src="france.png" id="boton" name="Francia" onclick="comienza('Francia')"/>
+                <input type="image" src="italy.png" id="boton" name="Italia" onclick="comienza('Italia')"/>
+        </div>
+        <div id="contenido"></div>
+    </body>
+</html>

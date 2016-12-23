@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prototype AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+        <script type="text/javascript">
+            function comienza(){
+                new Ajax.PeriodicalUpdater('contenido','nuevoid2.php',
+                {method:'post',asynchronous:true,
+                parameters:'vid='+$F('vid')+'&vgrupo='+$F('vgrupo'),
+                frequency:10,decay:3});
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            ID:
+            <input type="text" size="3" id="vid"><br>
+            Grupo:
+            <input type="text" size="3" id="vgrupo"><br>
+            <input type="button" value="Avanzar" id="boton" onclick="comienza()">
+        </div>
+        <div id="contenido"></div>
+    </body>
+</html>

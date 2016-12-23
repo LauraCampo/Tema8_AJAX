@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Reloj Sencillo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+        <script type="text/javascript">
+            function muestrahora(){
+                var contenido0 = $("contenido0");
+                var contenido1 = $("contenido1");
+                var contenido2 = $("contenido2");
+                var contenido3 = $("contenido3");
+                var contenido4 = $("contenido4");
+                // para crear la hora:
+                var varFecha = new Date();
+                var Hora = varFecha.getHours();
+                var Minutos = varFecha.getMinutes();
+                //para partir el resultado:
+                var Hora = Hora.toString(10);
+                var Minutos = Minutos.toString(10);
+                var Hora1 = (Hora.substring(0,1));
+                var Hora2 = (Hora.substring(1,2));
+                var Minutos1 = (Minutos.substring(0,1));
+                var Minutos2 = (Minutos.substring(1,2));
+                //para subsanar el error de las horas en cero:
+
+                if(parseInt(Hora,10) < 10){
+                   contenido0.innerHTML="<img src='0.png'/>";
+                   contenido1.innerHTML="<img src='"+Hora1+".png'/>";
+                }
+                else{
+                    contenido0.innerHTML="<img src='"+Hora1+".png'/>";
+                    contenido1.innerHTML="<img src='"+Hora2+".png'/>";
+                    
+                    if(parseInt(Minutos,10) < 10){ 
+                       contenido3.innerHTML="<img src='0.png'/>";
+                       contenido4.innerHTML="<img src='"+Minutos1+".png'/>";
+                    }
+                    else{
+                    contenido3.innerHTML="<img src='"+Minutos1+".png'/>";
+                    contenido4.innerHTML="<img src='"+Minutos2+".png'/>"; 
+                    } 
+                }
+                contenido2.innerHTML="<img src='punt.png'/>";  
+            }
+        </script>
+        <style type="text/css">
+            #reloj {
+                width: 260px;
+                border: 2px solid pink;
+            }
+            #reloj div{
+                float: left;
+            }
+            #reloj div img{
+                width:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input type="button" value="Ver hora" id="boton" onclick="muestrahora();" />
+        </div>
+        <div id="reloj">
+        <div id="contenido0"></div>
+        <div id="contenido1"></div>
+        <div id="contenido2"></div>
+        <div id="contenido3"></div>
+        <div id="contenido4"></div>
+        </div>
+    </body>
+</html>

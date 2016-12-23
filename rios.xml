@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Geografía>
+    <Río>
+        <País>España</País>
+        <Nombre>Tajo</Nombre>
+        <Longitud>1006Km</Longitud>
+        <Desembocadura>Océano Atlántico</Desembocadura>
+    </Río>
+    <Río>
+        <País>España</País>
+        <Nombre>Túria</Nombre>
+        <Longitud>280Km</Longitud>
+        <Desembocadura>Mar Mediterráneo</Desembocadura>
+    </Río>
+    <Río>
+        <País>Alemania</País>
+        <Nombre>Danubio</Nombre>
+        <Longitud>2850Km</Longitud>
+        <Desembocadura>Mar Negro</Desembocadura>
+    </Río>
+    <Río>   
+        <País>Alemania</País>
+        <Nombre>Elba</Nombre>
+        <Longitud>1162Km</Longitud>
+        <Desembocadura>Mar del Norte</Desembocadura>
+    </Río>
+    <Río>    
+        <País>Francia</País>
+        <Nombre>Loira</Nombre>
+        <Longitud>1012Km</Longitud>
+        <Desembocadura>Océano Atlántico</Desembocadura>
+    </Río>
+    <Río>
+        <País>Italia</País>
+        <Nombre>Magra</Nombre>
+        <Longitud>70Km</Longitud>
+        <Desembocadura>Mar de Liguria</Desembocadura>
+    </Río>
+    <Río>
+        <País>Italia</País>
+        <Nombre>Arno</Nombre>
+        <Longitud>111Km</Longitud>
+        <Desembocadura>Mar de Liguria</Desembocadura>
+    </Río>
+    <Río>
+        <País>Italia</País>
+        <Nombre>Po</Nombre>
+        <Longitud>652Km</Longitud>
+        <Desembocadura>Mar Adriático</Desembocadura>
+    </Río>
+</Geografía>
